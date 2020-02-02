@@ -1,0 +1,110 @@
+.card_container {
+  perspective: 1000;
+  width: 300px;
+  height: 170px;
+}
+
+.flipper {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card_container:hover {
+  .flipper {
+    transform: rotateY(180deg);
+
+    
+  }
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 300px;
+  height: 170px;
+  background-color: blue;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 60px 15px 0 20px;
+
+  .card_item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    min-height: 20px;
+  }
+
+  .card_content {
+    min-height: min-content;
+    font-size: 10px;
+  }
+
+  .scroll_wrapper {
+    width: 150px;
+  }
+
+  .user_name {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    overflow: hidden;
+  }
+}
+
+.card_form {
+  width: 400px;
+  label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 15px 0;
+  }
+
+  input[name="security_code"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .security_code {
+    -moz-appearance: textfield;
+  }
+
+  .btn_submit {
+    display: block;
+    margin: 0 0 0 auto;
+    color: white;
+    background-color: blue;
+    border: 1px solid transparent;
+    min-height: 30px;
+    min-width: 50px;
+    border-radius: 5px;
+    transition: 0.5s ease-in;
+
+    &:hover {
+      color: blue;
+      background-color: transparent;
+      box-shadow: 0 0 10px 0 rgb(118, 104, 197) inset,
+        0 0 10px 4px rgb(143, 119, 228);
+      border: 1px solid blue;
+    }
+  }
+}
